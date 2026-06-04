@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+        font-family: sans-serif;
+        padding: 10px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 12px;
+        font-size: 18px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 20px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 8px;
+        border: 1px solid #ccc;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+.form-card {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+    </style>
+    <title>給油記録</title>
+</head>
+<body>
+    <h1>給油記録</h1>
+
+    <div class="form-card">
+        <label>日付: <input type="date" id="date"></label><br>
+	<label>油種:
+  	  <select id="type">
+    	    <option value="レギュラー">レギュラー</option>
+    	    <option value="ハイオク">ハイオク</option>
+     	    <option value="軽油">軽油</option>
+    	  </select>
+        </label><br>
+       
+        <label>給油量(L): <input type="number" id="amount"></label><br>
+        <label>単価(円): <input type="number" id="price"></label><br>
+        <label>走行距離(km): <input type="number" id="odometer"></label><br>
+        <button id="saveBtn">保存</button>
+    </div>
+
+    <h2>記録一覧</h2>
+<table border="1" id="recordTable">
+    <thead>
+        <tr>
+            <th>日付</th>
+            <th>油種</th>
+            <th>給油量(L)</th>
+            <th>価格(円)</th>
+	    <th>給油金額(円)</th>
+            <th>総走行距離(km)</th>
+            <th>走行距離(km)</th>
+            <th>燃費 (km/L)</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="recordList"></tbody>
+</table>
+
+    <script src="app.js"></script>
+</body>
+</html>
