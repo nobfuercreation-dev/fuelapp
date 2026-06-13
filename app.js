@@ -191,7 +191,7 @@ function exportCSV() {
         r.date,
         r.amount,
         r.price,
-        r.total,
+        r.pricetotal,
         r.odometer,
         r.distance,
         r.fuelEfficiency
@@ -254,7 +254,7 @@ function displayRecords() {
     let records = JSON.parse(localStorage.getItem("fuelRecords")) || [];
 
 //★日付でソート（古い順）
-    records.sort((a, b) => new Date(a.date) - new Date(b.Date));
+    records.sort((a, b) => new Date(a.date) - new Date(b.date));
 
     const list = document.getElementById("recordList");
     list.innerHTML = "";
